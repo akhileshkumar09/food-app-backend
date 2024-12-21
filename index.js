@@ -134,7 +134,7 @@ app.get('/user', async (req, res) => {
 app.get('/categories',  (req, res) => {
 foodCategory.find()
   .then((items) => {
-    console.log(items)
+    
     res.send(items)
   })
   .catch((err) => {
