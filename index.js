@@ -131,7 +131,7 @@ app.get('/user', async (req, res) => {
 
 
 // find all category
-app.get('/food-app/categories',  (req, res) => {
+app.get('/categories',  (req, res) => {
 foodCategory.find()
   .then((items) => {
     console.log(items)
@@ -144,7 +144,7 @@ foodCategory.find()
 })
 
 // find all items of  drink
-app.get('/food-app/drinks', async (req, res) => {
+app.get('/drinks', async (req, res) => {
   foodItemsDrink.find()
   .then((items)=>{
     res.send(items)
@@ -157,7 +157,7 @@ app.get('/food-app/drinks', async (req, res) => {
 
 
 // find all items of  starter
-app.get('/food-app/starter', async (req, res) => {
+app.get('/starter', async (req, res) => {
   foodItemsFood.find({CategoryName:'Starter'})
   .then((items)=>{
     res.send(items)
@@ -169,7 +169,7 @@ app.get('/food-app/starter', async (req, res) => {
 })
 
 // find all items of  main course
-app.get('/food-app/main-course', async (req, res) => {
+app.get('/main-course', async (req, res) => {
   foodItemsFood.find({CategoryName:'Main_Course'})
   .then((items)=>{
     res.send(items)
@@ -181,7 +181,7 @@ app.get('/food-app/main-course', async (req, res) => {
 })
 
 // add a item to drink category
-app.post('/food-app/drink-item', async (req, res) => {
+app.post('/drink-item', async (req, res) => {
   const {name, img, description} = req.body;
   const {regular, medium, large} = req.body;
   try{
@@ -214,7 +214,7 @@ app.post('/food-app/drink-item', async (req, res) => {
 
 
 // add a item to starter category
-app.post('/food-app/starter-item', async (req, res) => {
+app.post('/starter-item', async (req, res) => {
   const {name, img, description} = req.body;
   const {half, full} = req.body;
   try{
@@ -245,7 +245,7 @@ app.post('/food-app/starter-item', async (req, res) => {
 
 
 // add a item to main course category
-app.post('/food-app/mains-item', async (req, res) => {
+app.post('/mains-item', async (req, res) => {
   const {name, img, description} = req.body;
   const {half, full} = req.body;
   try{
